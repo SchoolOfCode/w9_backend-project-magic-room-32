@@ -2,8 +2,9 @@ import { query } from "../db/index.js";
 
 export async function getWeekById(id) {
   const res = await query(
-    `SELECT * FROM progress, diary
-   WHERE week_id = $1;`,
+    `SELECT * FROM diary INNER JOIN progress
+     ON progress.week_id = diary.week
+    WHERE progress.week_id = $1 AND diary.week = $1;`,
     [id]
   );
   console.log(res.rows[0]);
@@ -11,8 +12,10 @@ export async function getWeekById(id) {
 }
 
 export async function submitResults(userResults) {
-  let latestResults = await query (` INSERT INTO progress (quizNumber, correctAnswers) VALUES ($1, $2)`,
-    [userResults.quizNumber, userResults.correctAnswers]);
+  let latestResults = await query(
+    ` INSERT INTO progress (quizNumber, correctAnswers) VALUES ($1, $2)`,
+    [userResults.quizNumber, userResults.correctAnswers]
+  );
   return latestResults;
 }
 

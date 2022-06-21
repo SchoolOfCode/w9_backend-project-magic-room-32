@@ -16,10 +16,10 @@ export const bootcampers = [
 export const diary = [
   {
     diary: "Today was a good day",
-    week_id: 1,
+    week: 1,
   },
   {
     diary: "I hate React",
-    week_id: 4,
+    week: 3,
   },
 ];
