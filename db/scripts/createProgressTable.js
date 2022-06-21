@@ -1,7 +1,7 @@
 import { query } from "../index.js";
 
 let createTableSQL =
-  "CREATE TABLE progress (bootcamper_id SERIAL PRIMARY KEY, week INT, firstName TEXT, lastName TEXT, quizResults INT, projectProgress INT);";
+  "CREATE TABLE progress (week_id SERIAL PRIMARY KEY, quizResults INT);";
 
 async function createTable() {
   await query(createTableSQL);
