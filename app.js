@@ -5,7 +5,11 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-app.use("/api/diary", router);
+app.use("/bootcampers", router);
+
+app.get("/", (req, res) => {
+  res.send("root route");
+});
 
 // Serves Front-end
 // app.get("/", function (req, res) {
