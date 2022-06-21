@@ -1,9 +1,13 @@
 import { query } from "../db/index.js";
 
-export async function getAllBootcampers() {
-  const res = await query(`SELECT * FROM progress;`);
-  console.log(res.rows);
-  return res.rows;
+export async function getWeekById(id) {
+  const res = await query(
+    `SELECT * FROM progress, diary
+   WHERE week_id = $1;`,
+    [id]
+  );
+  console.log(res.rows[0]);
+  return res.rows[0];
 }
 
 // export async function createBootcamper(newCat) {
