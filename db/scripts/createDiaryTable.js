@@ -4,8 +4,8 @@ let createSql = `CREATE TABLE IF NOT EXISTS diary (diary_id INT PRIMARY KEY GENE
   bootcamper_id INT,
   FOREIGN KEY(bootcamper_id)
   REFERENCES progress(bootcamper_id),
-  diary TEXT,
-  week INT)`;
+  week INT,
+  diary TEXT)`;
 
 async function createDiaryTable() {
   const res = await query(createSql);
