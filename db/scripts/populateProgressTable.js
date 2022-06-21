@@ -5,12 +5,12 @@ async function populateTable() {
   for (let i = 0; i < bootcampers.length; i++) {
     await query(
       `INSERT INTO progress 
-        (quizResults)
-        VALUES ($1);`,
-      [bootcampers[i].quizResults]
+        (quizNumber, correctAnswers)
+        VALUES ($1, $2);`,
+      [bootcampers[i].quizNumber, bootcampers[i].correctAnswers]
     );
   }
-  console.log("progress Table filled.");
+  console.log("progress table filled.");
 }
 
 populateTable();

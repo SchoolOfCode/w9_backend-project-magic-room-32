@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async function (req, res) {});
 
-router.get("/:name", async function (req, res) {});
+router.get("/bootcamper", async function (req, res) {});
 
 // submit quiz result
 router.post("/", async function (req, res) {

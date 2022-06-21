@@ -7,7 +7,7 @@ async function populateDiaryTable() {
       `INSERT INTO diary (week_id, diary) VALUES ($1, $2) RETURNING *`,
       [diary[i].week_id, diary[i].diary]
     );
-    console.log(res.rows[0]);
+    console.log("diary table filled");
   }
 }
 populateDiaryTable();
