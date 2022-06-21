@@ -13,7 +13,8 @@
     "createDiaryTable": "node -r dotenv/config ./db/scripts/createDiaryTable.js",
     "populateDiaryTable": "node -r dotenv/config ./db/scripts/populateDiaryTable.js",
     "deleteDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js",
-    "resetDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js"
+    "resetDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js",
+    "resetAll": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/deleteProgressTable.js && node -r dotenv/config ./db/scripts/createProgressTable.js && node -r dotenv/config ./db/scripts/populateProgressTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

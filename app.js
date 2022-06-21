@@ -9,7 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(logger("dev"));
-app.use("/bootcampers", router);
+
+app.use("/bootcamper", router);
 
 app.get("/", (req, res) => {
   res.send("root route");

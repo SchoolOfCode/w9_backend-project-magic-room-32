@@ -1,15 +1,19 @@
 export const bootcampers = [
   {
-    quizResults: 14
+    quizNumber: 2,
+    correctAnswers: 8
   },
   {
-    quizResults: 15
+    quizNumber: 5,
+    correctAnswers: 4
   },
   {
-    quizResults: 16
+    quizNumber: 1,
+    correctAnswers: 9
   },
   {
-    quizResults: 16
+    quizNumber: 3,
+    correctAnswers: 2
   },
 ];
 
