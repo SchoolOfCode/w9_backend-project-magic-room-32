@@ -11,7 +11,7 @@
     "deleteTable": "node -r dotenv/config ./db/scripts/deleteTable.js",
     "resetTable": "node -r dotenv/config ./db/scripts/deleteTable.js && node -r dotenv/config ./db/scripts/createTable.js && node -r dotenv/config ./db/scripts/populateTable.js",
     "createDiaryTable": "node -r dotenv/config ./db/scripts/createDiaryTable.js",
-    "populateTable": "node -r dotenv/config ./db/scripts/populateDiaryTable.js",
+    "populateDiaryTable": "node -r dotenv/config ./db/scripts/populateDiaryTable.js",
     "deleteDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js",
     "resetDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js"
   },
