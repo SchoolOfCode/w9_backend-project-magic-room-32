@@ -3,15 +3,15 @@ export const bootcampers = [
     id: 1,
     firstName: "example",
     lastName: "person",
-    quizResults: Number,
-    projectProgress: Number,
+    quizResults: 14,
+    projectProgress: 5,
   },
   {
     id: 2,
     firstName: "another",
     lastName: "bootcamper",
-    quizResults: Number,
-    projectProgress: Number,
+    quizResults: 22,
+    projectProgress: 3,
   },
 ];
 
