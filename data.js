@@ -1,6 +1,7 @@
 export const bootcampers = [
   {
     id: 1,
+    week: 1,
     firstName: "example",
     lastName: "person",
     quizResults: 14,
@@ -8,6 +9,7 @@ export const bootcampers = [
   },
   {
     id: 2,
+    week: 1,
     firstName: "another",
     lastName: "bootcamper",
     quizResults: 22,
