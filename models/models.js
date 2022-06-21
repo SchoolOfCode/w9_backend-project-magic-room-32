@@ -1,3 +1,19 @@
+import { query } from "../db/index.js";
+
+export async function getAllBootcampers() {
+  const res = await query(`SELECT * FROM progress;`);
+  console.log(res.rows);
+  return res.rows;
+}
+
+// export async function createBootcamper(newCat) {
+//   let createdCat = await query(
+//     "INSERT INTO bootcampers (firstName, lastName, quizResults, projectProgress) VALUES ($1, $2, $3, $4)",
+//     [newCat.name, newCat.human, newCat.hobby]
+//   );
+//   return createdCat;
+// }
+
 // export async function getAllBootcampers(){
 //     let allCats = await query(`SELECT * FROM bootcampers;`);
 //     // return {payload: allCats.rows};

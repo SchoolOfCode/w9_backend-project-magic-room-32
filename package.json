@@ -16,8 +16,10 @@
     "resetDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "morgan": "^1.10.0",
     "node": "^18.4.0",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3",
