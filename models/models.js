@@ -6,13 +6,11 @@ export async function getAllBootcampers() {
   return res.rows;
 }
 
-// export async function createBootcamper(newCat) {
-//   let createdCat = await query(
-//     "INSERT INTO bootcampers (firstName, lastName, quizResults, projectProgress) VALUES ($1, $2, $3, $4)",
-//     [newCat.name, newCat.human, newCat.hobby]
-//   );
-//   return createdCat;
-// }
+export async function submitResults(userResults) {
+  let latestResults = await query (` INSERT INTO progress (quizNumber, correctAnswers) VALUES ($1, $2)`,
+    [userResults.quizNumber, userResults.correctAnswers]);
+  return latestResults;
+}
 
 // export async function getAllBootcampers(){
 //     let allCats = await query(`SELECT * FROM bootcampers;`);
