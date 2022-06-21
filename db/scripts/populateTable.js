@@ -3,14 +3,14 @@ import bootcampers from "../../app.js";
 
 async function populateTable() {
   for (let i = 0; i < bootcampers.length; i++) {
-    await query(
+    const res = await query(
       `INSERT INTO bootcampers 
         (firstName, lastName, quizResults, projectProgress)
         VALUES ($1, $2, $3, $4);`,
       [bootcampers[i].firstName, bootcampers[i].lastName]
     );
+    console.log("Table filled.", res.rows[0]);
   }
-  console.log("Table filled.");
 }
 
 populateTable();
