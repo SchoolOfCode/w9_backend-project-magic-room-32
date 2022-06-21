@@ -1,4 +1,5 @@
 import express from "express";
+import { cloneElement } from "react";
 const router = express.Router();
 
 import { getAllBootcampers } from "../models/models.js";
@@ -11,7 +12,10 @@ router.get("/:id", async function (req, res) {});
 
 router.get("/:name", async function (req, res) {});
 
-router.post("/", async function (req, res) {});
+// submit quiz result
+router.post("/", async function (req, res) {
+  console.log(req.body);
+});
 
 router.put("/:id", async function (req, res) {});
 

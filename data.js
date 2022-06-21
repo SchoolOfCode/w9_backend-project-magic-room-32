@@ -19,12 +19,10 @@ export const bootcampers = [
 
 export const diary = [
   {
-    bootcamper_id: 1,
     diary: "Today was a good day",
-    week: 1,
+    week: 4,
   },
   {
-    bootcamper_id: 2,
     diary: "I hate React",
     week: 8,
   },
