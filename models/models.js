@@ -1,7 +1,7 @@
 import { query } from "../db/index.js";
 
 export async function getAllBootcampers() {
-  const res = await query(`SELECT * FROM bootcampers;`);
+  const res = await query(`SELECT * FROM progress;`);
   console.log(res.rows);
   return res.rows;
 }

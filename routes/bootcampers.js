@@ -3,7 +3,7 @@ const router = express.Router();
 
 import { getAllBootcampers } from "../models/models.js";
 
-router.get("/", async function (req, res) {
+router.get("/", async (req, res) => {
   res.json({ sucess: true, payload: await getAllBootcampers() });
 });
 

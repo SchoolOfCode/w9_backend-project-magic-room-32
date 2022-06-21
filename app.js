@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./routes/routes.js";
+import router from "./routes/bootcampers.js";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
