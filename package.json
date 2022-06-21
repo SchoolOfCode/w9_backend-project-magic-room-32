@@ -9,7 +9,8 @@
     "createTable": "node -r dotenv/config ./db/scripts/createTable.js",
     "fillTable": "node -r dotenv/config ./db/scripts/populateTable.js",
     "deleteTable": "node -r dotenv/config ./db/scripts/deleteTable.js",
-    "resetTable": "node -r dotenv/config ./db/scripts/deleteTable.js && node -r dotenv/config ./db/scripts/createTable.js && node -r dotenv/config ./db/scripts/populateTable.js"
+    "resetTable": "node -r dotenv/config ./db/scripts/deleteTable.js && node -r dotenv/config ./db/scripts/createTable.js && node -r dotenv/config ./db/scripts/populateTable.js",
+    "createDiaryTable": "node -r dotenv/config ./db/scripts/createDiaryTable.js"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
