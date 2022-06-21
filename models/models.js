@@ -1,8 +1,11 @@
 import { query } from "../db/index.js";
 
-export async function createBootcamper(newCat){
-    let createdCat = await query ('INSERT INTO bootcampers (firstName, lastName, quizResults, projectProgress) VALUES ($1, $2, $3, $4)',[newCat.name, newCat.human, newCat.hobby]);
-    return createdCat;
+export async function createBootcamper(newCat) {
+  let createdCat = await query(
+    "INSERT INTO bootcampers (firstName, lastName, quizResults, projectProgress) VALUES ($1, $2, $3, $4)",
+    [newCat.name, newCat.human, newCat.hobby]
+  );
+  return createdCat;
 }
 
 // export async function getAllBootcampers(){
