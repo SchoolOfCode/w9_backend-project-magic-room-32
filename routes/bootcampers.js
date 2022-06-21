@@ -15,7 +15,7 @@ router.get("/:id", async function (req, res) {});
 router.post("/", async function (req, res) {
   let userResults = req.body;
   console.log("Adding userResults to table...");
-  res.status(200).send("PostRequest succesful");;
+  res.json(await submitResults(userResults));
 });
 
 export default router;
