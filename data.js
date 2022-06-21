@@ -11,10 +11,6 @@ export const bootcampers = [
     quizNumber: 1,
     correctAnswers: 9,
   },
-  {
-    quizNumber: 3,
-    correctAnswers: 2,
-  },
 ];
 
 export const diary = [
