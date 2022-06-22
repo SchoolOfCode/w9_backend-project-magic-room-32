@@ -1,20 +1,20 @@
 import express from "express";
 
-const router = express.Router();
-
+import { submitResults } from "../models/models.js";
 import { getWeekById } from "../models/models.js";
 
-router.get("/:id", async function (req, res) {
-  res.json({ sucess: true, payload: await getWeekById(req.params.id) });
-});
+const router = express.Router();
 
 // submit quiz result
 router.post("/", async function (req, res) {
-  console.log(req.body);
+  let userResults = req.body;
+  console.log("Adding userResults to table...");
+  res.json(await submitResults(userResults));
 });
 
-router.put("/:id", async function (req, res) {});
-
-router.delete("/:id", async function (req, res) {});
+// get results & diary by weekID
+router.get("/:id", async function (req, res) {
+  res.json({ sucess: true, payload: await getWeekById(req.params.id) });
+});
 
 export default router;
