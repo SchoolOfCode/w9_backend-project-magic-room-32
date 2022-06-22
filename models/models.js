@@ -13,8 +13,8 @@ export async function getWeekById(id) {
 
 export async function submitResults(userResults) {
   let latestResults = await query(
-    ` INSERT INTO progress (quizNumber, correctAnswers) VALUES ($1, $2)`,
-    [userResults.quizNumber, userResults.correctAnswers]
+    ` INSERT INTO progress (weekNumber, quizNumber, correctAnswers) VALUES ($1, $2, $3)`,
+    [userResults.weekNumber, userResults.quizNumber, userResults.correctAnswers]
   );
   return latestResults;
 }
