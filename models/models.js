@@ -25,8 +25,3 @@ export async function submitResults(userResults) {
   );
   return latestResults;
 }
-
-export async function getScore(id) {
-  const res = await query(`SELECT * FROM progress WHERE weekNumber = $1`, [id]);
-  return res.rows;
-}
