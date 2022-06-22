@@ -1,5 +1,11 @@
 import { query } from "../db/index.js";
 
+export async function getAllWeeks() {
+  const res = await query(`SELECT * FROM diary INNER JOIN progress`);
+  console.log(res.rows);
+  return res.rows;
+}
+
 export async function getWeekById(id) {
   const res = await query(
     `SELECT * FROM diary INNER JOIN progress
