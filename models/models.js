@@ -1,5 +1,11 @@
 import { query } from "../db/index.js";
 
+export async function getAllWeeks() {
+  const res = await query(`SELECT * FROM diary INNER JOIN progress`);
+  console.log(res.rows);
+  return res.rows;
+}
+
 export async function getWeekById(id) {
   const res = await query(
     `SELECT * FROM diary INNER JOIN progress
@@ -25,26 +31,17 @@ export async function getWeekById(id) {
 
 export async function submitResults(userResults) {
   let latestResults = await query(
+<<<<<<< HEAD
     `INSERT INTO progress (weekNumber, quizNumber, correctAnswers)
     VALUES ($1, $2, $3) WHERE NOT EXISTS (SELECT * FROM progress WHERE weekNumber = $1
       AND quizNumber = $2
       AND correctAnswers = $3);`,
+=======
+
+    ` INSERT INTO progress (weekNumber, quizNumber, correctAnswers) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING;`,
+
+>>>>>>> 4b66102c864a670f4e57232aff7081b7f463edcb
     [userResults.weekNumber, userResults.quizNumber, userResults.correctAnswers]
   );
   return latestResults;
 }
-
-// export async function getAllBootcampers(){
-//     let allCats = await query(`SELECT * FROM bootcampers;`);
-//     // return {payload: allCats.rows};
-// }
-
-// export async function getCatByID(id){
-//     let foundCat = await query(`SELECT * FROM cats WHERE id = $1`, [id]);
-//     return foundCat.rows;
-// }
-
-// export async function getCatByName(nameQuery){
-//     let foundCat = await query(`SELECT * FROM cats WHERE name LIKE $1`, [nameQuery]);
-//     return foundCat.rows;
-// }
