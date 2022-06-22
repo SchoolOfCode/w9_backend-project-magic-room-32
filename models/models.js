@@ -19,7 +19,9 @@ export async function getWeekById(id) {
 
 export async function submitResults(userResults) {
   let latestResults = await query(
-    ` INSERT INTO progress (weekNumber, quizNumber, correctAnswers) VALUES ($1, $2, $3)`,
+
+    ` INSERT INTO progress (weekNumber, quizNumber, correctAnswers) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING;`,
+
     [userResults.weekNumber, userResults.quizNumber, userResults.correctAnswers]
   );
   return latestResults;
