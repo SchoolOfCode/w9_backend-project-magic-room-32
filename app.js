@@ -17,14 +17,6 @@ app.get("/", (req, res) => {
   res.send("root route");
 });
 
-app.post ("/", async (req, res) => {
-  let response = await submitResults(req.body);
-  console.log("hello world");
-  console.log(response);
-  console.log(req.body);
-  res.send("finished");
-})
-
 // Serves Front-end
 // app.get("/", function (req, res) {
 //   res.render("index", { title: "Cats" });
