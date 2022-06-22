@@ -17,9 +17,24 @@ export async function getWeekById(id) {
   return res.rows[0];
 }
 
+// export async function submitResults(userResults) {
+//   let latestResults = await query(
+//     `BEGIN IF NOT EXISTS (SELECT * FROM progress WHERE weekNumber = weekNumber
+//       AND quizNumber = quizNumber
+//       AND correctAnswers = correctAnswers)
+//       BEGIN INSERT INTO progress (weekNumber, quizNumber, correctAnswers)
+//       VALUES ($1, $2, $3) END END;`,
+//     [userResults.weekNumber, userResults.quizNumber, userResults.correctAnswers]
+//   );
+//   return latestResults;
+// }
+
 export async function submitResults(userResults) {
   let latestResults = await query(
-    ` INSERT INTO progress (weekNumber, quizNumber, correctAnswers) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING;`,
+    `INSERT INTO progress (weekNumber, quizNumber, correctAnswers)
+    VALUES ($1, $2, $3) WHERE NOT EXISTS (SELECT * FROM progress WHERE weekNumber = $1
+      AND quizNumber = $2
+      AND correctAnswers = $3);`,
     [userResults.weekNumber, userResults.quizNumber, userResults.correctAnswers]
   );
   return latestResults;

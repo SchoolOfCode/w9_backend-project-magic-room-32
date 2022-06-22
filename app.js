@@ -17,11 +17,6 @@ app.get("/", (req, res) => {
   res.send("root route");
 });
 
-// Serves Front-end
-// app.get("/", function (req, res) {
-//   res.render("index", { title: "Cats" });
-// });
-
 app.listen(PORT, function () {
   console.log(`Server listening on port: ${PORT}`);
 });
