@@ -26,7 +26,18 @@ export async function submitResults(userResults) {
   return latestResults;
 }
 
-export async function getScore(id) {
-  const res = await query(`SELECT * FROM progress WHERE weekNumber = $1`, [id]);
+export async function getWeeklyScore(weekNumber) {
+  // users- 3 columns
+  // email, pass, sesionkey
+  // email, weeknum, quiznum, correctanswers
+  // const response = await query(
+  //   `SELECT email FROM users WHERE sessionKey = $1`,
+  //   [sessionKey]
+  // );
+  // let email = response.rows[0].email;
+
+  const res = await query(`SELECT * FROM progress WHERE weekNumber = $1`, [
+    weekNumber,
+  ]);
   return res.rows;
 }

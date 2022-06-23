@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 app.use(logger("dev"));
 
-app.use("/", router);
+app.use("/week", router);
 
 app.get("/", (req, res) => {
   res.send("root route");
