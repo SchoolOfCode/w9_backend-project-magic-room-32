@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-import { getWeeklyScore, submitResults } from "../models/models.js";
+import { getWeeklyScore, submitResults } from "../models/weekMods.js";
 
 router.get("/:id", async function (req, res) {
   let scores = await getWeeklyScore(Number(req.params.id));
