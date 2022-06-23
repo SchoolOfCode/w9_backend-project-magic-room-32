@@ -12,11 +12,3 @@ const pool = new pg.Pool({
 export function query(text, params, callback) {
   return pool.query(text, params, callback);
 }
-
-beforeAll((done) => {
-  done();
-});
-afterAll((done) => {
-  pool.end();
-  done();
-});

@@ -26,7 +26,7 @@ diaryRouter.delete("/:id", async (req, res) => {
   let id = Number(req.params.id);
   console.log(id);
   console.log("Deleting diary for week " + id);
-  res.json(await deleteDiaryEntry(id));
+  res.json({ success: true, payload: await deleteDiaryEntry(id) });
 });
 
 export default diaryRouter;
