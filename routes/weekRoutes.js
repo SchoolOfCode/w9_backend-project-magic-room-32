@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-import { getWeeklyScore, submitResults } from "../models/models.js";
+import { getWeeklyScore, submitResults } from "../models/weekMods.js";
 
 router.get("/:id", async function (req, res) {
   let scores = await getWeeklyScore(Number(req.params.id));
@@ -14,13 +14,13 @@ router.get("/:id", async function (req, res) {
   total = Math.floor((total / (scores.length * 10)) * 100);
   console.log(total);
   res.json({
-    sucess: true,
+    success: true,
     payload: { percentage: total },
   });
 });
 
 router.post("/:id", async (req, res) => {
-  res.json({ sucess: true, payload: await submitResults(req.body) });
+  res.json({ success: true, payload: await submitResults(req.body) });
 });
 
 // // get results & diary by weekID

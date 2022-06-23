@@ -39,6 +39,16 @@ export const bootcampers = [
     quizNumber: 4,
     correctAnswers: 3,
   },
+  {
+    weekNumber: 3,
+    quizNumber: 1,
+    correctAnswers: 3,
+  },
+  {
+    weekNumber: 4,
+    quizNumber: 1,
+    correctAnswers: 3,
+  },
 ];
 
 export const diary = [
@@ -47,7 +57,15 @@ export const diary = [
     week: 1,
   },
   {
-    diary: "I hate React",
+    diary: "Coding is fun",
+    week: 2,
+  },
+  {
+    diary: "I <3 SoC!",
     week: 3,
+  },
+  {
+    diary: "I hate React",
+    week: 4,
   },
 ];
