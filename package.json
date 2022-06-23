@@ -14,7 +14,11 @@
     "populateDiaryTable": "node -r dotenv/config ./db/scripts/populateDiaryTable.js",
     "deleteDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js",
     "resetDiaryTable": "node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js",
-    "resetAll": "node -r dotenv/config ./db/scripts/deleteProgressTable.js && node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/createProgressTable.js && node -r dotenv/config ./db/scripts/populateProgressTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js"
+    "resetAll": "node -r dotenv/config ./db/scripts/deleteProgressTable.js && node -r dotenv/config ./db/scripts/deleteDiaryTable.js && node -r dotenv/config ./db/scripts/createProgressTable.js && node -r dotenv/config ./db/scripts/populateProgressTable.js && node -r dotenv/config ./db/scripts/createDiaryTable.js && node -r dotenv/config ./db/scripts/populateDiaryTable.js",
+    "createUsersTable": "node -r dotenv/config ./db/scripts/createUsersTable.js",
+    "populateUsersTable": "node -r dotenv/config ./db/scripts/populateUsersTable.js",
+    "deleteUsersTable": "node -r dotenv/config ./db/scripts/deleteUsersTable.js",
+    "resetUsersTable": "node -r dotenv/config ./db/scripts/deleteUsersTable.js && node -r dotenv/config ./db/scripts/createUsersTable.js && node -r dotenv/config ./db/scripts/populateUsersTable.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -22,8 +26,9 @@
     "express": "^4.18.1",
     "morgan": "^1.10.0",
     "node": "^18.4.0",
-    "nodemon": "^2.0.16",
+    "nodemon": "^1.3.3",
     "pg": "^8.7.3",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "uuidv4": "^6.2.13"
   }
 }
