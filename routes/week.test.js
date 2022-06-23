@@ -9,8 +9,11 @@ describe(`get weekly score and sends back percentage`, () => {
     payload: { percentage: total }`, async () => {
     const res = await request(app).get("/week/1");
     expect(res.statusCode).toBe(200);
+  });
+  test(`checks if response returns as { success: true, payload: result }`, async () => {
+    const res = await request(app).get("/week/1");
     expect(res.body).toEqual({
-      sucess: true,
+      success: true,
       payload: { percentage: expect.any(Number) },
     });
   });
