@@ -53,6 +53,10 @@ export const bootcampers = [
 
 export const diary = [
   {
+    diary: "Please select a week to display its diary entry",
+    week: 0,
+  },
+  {
     diary: "Today was a good day",
     week: 1,
   },
