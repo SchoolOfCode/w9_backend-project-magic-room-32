@@ -4,7 +4,7 @@ const router = express.Router();
 import { getWeeklyScore, submitResults } from "../models/models.js";
 
 router.get("/:id", async function (req, res) {
-  let scores = await getWeeklyScore(Number(req.params.id), req.headers.session);
+  let scores = await getWeeklyScore(Number(req.params.id));
   console.log(scores);
   let total = 0;
   for (let i = 0; i < scores.length; i++) {
