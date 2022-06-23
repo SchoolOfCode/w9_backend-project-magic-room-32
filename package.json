@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node -r dotenv/config app.js",
     "dev": "nodemon -r dotenv/config app.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --setupFiles dotenv/config",
     "createProgressTable": "node -r dotenv/config ./db/scripts/createProgressTable.js",
     "populateProgressTable": "node -r dotenv/config ./db/scripts/populateProgressTable.js",
     "deleteProgressTable": "node -r dotenv/config ./db/scripts/deleteProgressTable.js",
@@ -22,7 +23,6 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
     "node": "^18.4.0",
@@ -30,5 +30,10 @@
     "pg": "^8.7.3",
     "react": "^18.2.0",
     "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "jest": "^28.1.1",
+    "supertest": "^6.2.3"
   }
 }
