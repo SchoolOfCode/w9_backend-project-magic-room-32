@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
   res.send("root route");
 });
 
-app.listen(PORT, function () {
-  console.log(`Server listening on port: ${PORT}`);
-});
+// app.listen(PORT, function () {
+//   console.log(`Server listening on port: ${PORT}`);
+// });
 
 export default app;

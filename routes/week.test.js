@@ -4,13 +4,11 @@ import { describe, test, expect } from "@jest/globals";
 
 // get weekly score and send back percentage
 describe(`get weekly score and sends back percentage`, () => {
-  test(`returns status code 200 and checks if response returns {
-    sucess: true,
-    payload: { percentage: total }`, async () => {
+  test(`returns status code 200`, async () => {
     const res = await request(app).get("/week/1");
     expect(res.statusCode).toBe(200);
   });
-  test(`checks if response returns as { success: true, payload: result }`, async () => {
+  test(`checks if response returns as { success: true, payload: percentage }`, async () => {
     const res = await request(app).get("/week/1");
     expect(res.body).toEqual({
       success: true,
