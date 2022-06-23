@@ -1,5 +1,6 @@
 import express from "express";
 import router from "./routes/week.js";
+import diaryRouter from "./routes/diary.js";
 import cors from "cors";
 import logger from "morgan";
 
