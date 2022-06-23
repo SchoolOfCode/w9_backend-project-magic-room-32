@@ -2,7 +2,6 @@ import express from "express";
 import router from "./routes/week.js";
 import cors from "cors";
 import logger from "morgan";
-// import { submitResults } from "./models/models.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -12,6 +11,7 @@ app.use(cors());
 app.use(logger("dev"));
 
 app.use("/week", router);
+app.use("/diary", diaryRouter);
 
 app.get("/", (req, res) => {
   res.send("root route");
