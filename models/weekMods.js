@@ -8,6 +8,23 @@ export async function getWeeklyScore(weekNumber) {
   return res.rows;
 }
 
+export async function getWeeklyScore(weekNumber, sessionKey) {
+  // users- 3 columns
+  // email, pass, sesionkey
+  // email, weeknum, quiznum, correctanswers
+  const response = await query(
+    `SELECT bootcamper_id FROM users WHERE sessionKey = $1`,
+    [sessionKey]
+  );
+  let bootcamper_id = response.rows[0].bootcamper_id;
+
+  const res = await query(
+    `SELECT * FROM progress WHERE weekNumber = $1 AND bootcamper_id = $2`,
+    [weekNumber, bootcamper_id]
+  );
+  return res.rows;
+}
+
 // post
 export async function submitResults(userResults) {
   let latestResults = await query(
@@ -17,5 +34,3 @@ export async function submitResults(userResults) {
   );
   return latestResults;
 }
-
-

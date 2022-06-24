@@ -8,19 +8,3 @@
 //   console.log(res.rows[0]);
 //   return res.rows[0];
 // }
-
-// export async function getWeeklyScore(weekNumber) {
-//     // users- 3 columns
-//     // email, pass, sesionkey
-//     // email, weeknum, quiznum, correctanswers
-//     // const response = await query(
-//     //   `SELECT email FROM users WHERE sessionKey = $1`,
-//     //   [sessionKey]
-//     // );
-//     // let email = response.rows[0].email;
-
-//     const res = await query(`SELECT * FROM progress WHERE weekNumber = $1`, [
-//       weekNumber,
-//     ]);
-//     return res.rows;
-//   }
