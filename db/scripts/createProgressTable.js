@@ -1,10 +1,10 @@
 import { query } from "../index.js";
 
-let createTableSQL = `CREATE TABLE progress (weekNumber INT NOT NULL,
+let createTableSQL = `CREATE TABLE results (weekNumber INT NOT NULL,
    quizNumber INT NOT NULL,
-   bootcamper_id INT,
+   email VARCHAR (255),
    correctAnswers INT,
-   PRIMARY KEY(weekNumber, quizNumber, bootcamper_id));`;
+   PRIMARY KEY(weekNumber, quizNumber, email));`;
 
 async function createTable() {
   await query(createTableSQL);
