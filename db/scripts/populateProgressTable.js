@@ -5,10 +5,10 @@ async function populateTable() {
   for (let i = 0; i < bootcampers.length; i++) {
     await query(
       `INSERT INTO results 
-        (email, weekNumber, quizNumber, correctAnswers)
+        (bootcamper_id, weekNumber, quizNumber, correctAnswers)
         VALUES ($1, $2, $3, $4);`,
       [
-        bootcampers[i].email,
+        bootcampers[i].bootcamper_id,
         bootcampers[i].weekNumber,
         bootcampers[i].quizNumber,
         bootcampers[i].correctAnswers,

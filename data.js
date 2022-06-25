@@ -1,6 +1,6 @@
 export const bootcampers = [
   {
-    email: "joe@gmail.com",
+    bootcamper_id: 1,
     weekNumber: 1,
     quizNumber: 2,
     correctAnswers: 8,
@@ -9,7 +9,7 @@ export const bootcampers = [
 
 export const diary = [
   {
-    email: "joe@gmail.com",
+    bootcamper_id: 1,
     diary: "Today was a good day",
     week: 1,
   },

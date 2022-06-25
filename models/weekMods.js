@@ -1,12 +1,12 @@
 import { query } from "../db/index.js";
 
 // get
-export async function getWeeklyScore(weekNumber) {
-  const res = await query(`SELECT * FROM progress WHERE weekNumber = $1`, [
-    weekNumber,
-  ]);
-  return res.rows;
-}
+// export async function getWeeklyScore(weekNumber) {
+//   const res = await query(`SELECT * FROM progress WHERE weekNumber = $1`, [
+//     weekNumber,
+//   ]);
+//   return res.rows;
+// }
 
 export async function getWeeklyScore(weekNumber, sessionKey) {
   // users- 3 columns
