@@ -4,7 +4,7 @@ async function createUsersTable() {
   const res = await query(`CREATE TABLE IF NOT EXISTS users 
     (email VARCHAR (255) PRIMARY KEY,
     password VARCHAR (50),
-    sessionKey VARCHAR (50))`);
+    sessionKey UUID)`);
   console.log(res.command);
 }
 

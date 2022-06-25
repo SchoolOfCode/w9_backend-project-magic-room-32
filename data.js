@@ -15,10 +15,10 @@ export const diary = [
   },
 ];
 
-export const users = [
-  {
-    email: "",
-    password: "",
-    sessioKey: "",
-  },
-];
+// export const users = [
+//   {
+//     email: "",
+//     password: "",
+//     sessioKey: ,
+//   },
+// ];
