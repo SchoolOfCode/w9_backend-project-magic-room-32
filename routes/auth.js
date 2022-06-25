@@ -10,7 +10,7 @@ authRouter.post("/:register", async (req, res) => {
   });
 });
 
-authRouter.post("/:login", async (req, res) => {
+authRouter.put("/:login", async (req, res) => {
   res.json({
     success: true,
     payload: await userLogin(req.body.email, req.body.password),

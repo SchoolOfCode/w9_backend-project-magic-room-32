@@ -11,7 +11,8 @@ export async function userRegister(email, password) {
   );
   return res.rows;
 }
-
+const sessionKey = uuidv4();
+console.log(sessionKey);
 // login
 export async function userLogin(email, password) {
   const res = await query(
@@ -19,8 +20,7 @@ export async function userLogin(email, password) {
     [email, password]
   );
   let bootcamper_id = res.rows[0].bootcamper_id;
-  const sessionKey = uuidv4();
-  console.log(sessionKey);
+
   const response = await query(
     `UPDATE users SET sessionKey = $1 WHERE bootcamper_id = $2;`,
     [sessionKey, bootcamper_id]
