@@ -4,26 +4,36 @@ const router = express.Router();
 import { getWeeklyScore, submitResults } from "../models/weekMods.js";
 
 router.get("/:id", async function (req, res) {
-  let scores = await getWeeklyScore(
-    Number(req.params.id),
-    req.headers.sessionKey
-  );
-  console.log(scores);
-  let total = 0;
-  for (let i = 0; i < scores.length; i++) {
-    total += scores[i].correctanswers;
-  }
-  // get percentage
-  total = Math.floor((total / (scores.length * 10)) * 100);
-  console.log(total);
+  // let scores = await getWeeklyScore(
+  //   Number(req.params.id),
+  //   req.headers.sessionKey
+  // );
+  // console.log(scores);
+  // let total = 0;
+  // for (let i = 0; i < scores.length; i++) {
+  //   total += scores[i].correctanswers;
+  // }
+  // // get percentage
+  // total = Math.floor((total / (scores.length * 10)) * 100);
+  // console.log(total);
+  // res.json({
+  //   success: true,
+  //   payload: { percentage: total },
+  // });
+  console.log(req.headers.sessionkey);
   res.json({
-    success: true,
-    payload: { percentage: total },
+    payload: await getWeeklyScore(
+      Number(req.params.id),
+      req.headers.sessionkey
+    ),
   });
 });
 
 router.post("/:id", async (req, res) => {
-  res.json({ success: true, payload: await submitResults(req.body) });
+  res.json({
+    success: true,
+    payload: await submitResults(req.body, req.headers.sessionKey),
+  });
 });
 
 // // get results & diary by weekID
