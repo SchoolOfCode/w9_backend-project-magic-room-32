@@ -69,7 +69,7 @@ export const diary = [
     week: 3,
   },
   {
-    diary: "I hate React",
+    diary: "I'm an entry in a database",
     week: 4,
   },
 ];

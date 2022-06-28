@@ -14,10 +14,6 @@ app.use(logger("dev"));
 app.use("/week", router);
 app.use("/diary", diaryRouter);
 
-app.get("/", (req, res) => {
-  res.send("root route");
-});
-
 app.listen(PORT, function () {
   console.log(`Server listening on port: ${PORT}`);
 });
