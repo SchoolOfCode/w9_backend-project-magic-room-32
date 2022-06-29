@@ -1,9 +1,7 @@
 import { query } from "../index.js";
 
-const deleteSql = `DROP TABLE IF EXISTS diary; `;
-
 async function dropDiaryTable() {
-  const res = await query(deleteSql);
+  const res = await query(`DROP TABLE IF EXISTS diary;`);
   console.log("diary table deleted");
 }
 dropDiaryTable();

@@ -1,6 +1,6 @@
 import { query } from "../db/index.js";
 
-// get
+// get weekly score using a particular week number
 export async function getWeeklyScore(weekNumber) {
   const res = await query(`SELECT * FROM progress WHERE weekNumber = $1`, [
     weekNumber,
@@ -8,7 +8,7 @@ export async function getWeeklyScore(weekNumber) {
   return res.rows;
 }
 
-// post
+// submit results into the progress table
 export async function submitResults(userResults) {
   let latestResults = await query(
     `INSERT INTO progress (weekNumber, quizNumber, correctAnswers)
@@ -17,5 +17,3 @@ export async function submitResults(userResults) {
   );
   return latestResults;
 }
-
-

@@ -7,10 +7,12 @@ import logger from "morgan";
 const PORT = process.env.PORT;
 const app = express();
 
+// middlewares
 app.use(express.json());
 app.use(cors());
 app.use(logger("dev"));
 
+// routes
 app.use("/week", router);
 app.use("/diary", diaryRouter);
 

@@ -1,10 +1,7 @@
 import { query } from "../index.js";
 
-let deleteSQL = "DROP TABLE progress;";
-
 async function deleteTable() {
-  await query(deleteSQL);
+  await query("DROP TABLE IF EXISTS progress;");
   console.log("progress table deleted");
 }
 deleteTable();
-

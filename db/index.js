@@ -1,5 +1,6 @@
 import pg from "pg";
 
+// config
 const pool = new pg.Pool({
   user: process.env.PGUSER,
   host: process.env.PGHOST,

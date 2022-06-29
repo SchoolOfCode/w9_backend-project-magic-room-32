@@ -18,7 +18,6 @@ describe(`get weekly score and sends back percentage`, () => {
 });
 
 // post result by id
-
 describe(`post score by week`, () => {
   test(`returns status code 200`, async () => {
     const res = await request(app)
